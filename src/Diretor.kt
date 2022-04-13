@@ -2,15 +2,14 @@ class Diretor(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int,
+    senha: Int,
     val plr: Double
-) : Funcionario(
+) : FuncionarioAdmin(
     nome,
     cpf,
-    salario
+    salario,
+    senha
 ) {
-
-    fun autentica(senha: Int): Boolean = this.senha == senha
 
     override val bonificacao: Double
         get() {
