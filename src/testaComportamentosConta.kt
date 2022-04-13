@@ -1,10 +1,10 @@
 fun testaComportamentosConta() {
     println("Bem vindo ao Bytebank")
 
-    val contaAlex = Conta(titular = "Alex", numero = 1000)
+    val contaAlex = ContaCorrente(titular = "Alex", numero = 1000)
     contaAlex.deposita(200.0)
 
-    val contaFran = Conta(numero = 1001, titular = "Fran")
+    val contaFran = ContaPoupanca(numero = 1001, titular = "Fran")
     contaFran.deposita(300.0)
 
     println(contaFran.titular)
