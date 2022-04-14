@@ -1,15 +1,18 @@
 class ContaPoupanca(
     titular: String,
     numero: Int
-) : Conta(
+) : ContaTransferivel(
     titular = titular,
     numero = numero
 ) {
 
-    override fun saca(valor: Double) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
+    override fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor
+            destino.deposita(valor)
+            return true
         }
+        return false
     }
 
 }
