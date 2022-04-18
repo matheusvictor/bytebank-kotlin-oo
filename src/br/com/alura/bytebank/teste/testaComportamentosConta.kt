@@ -1,3 +1,6 @@
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
+
 fun testaComportamentosConta() {
     println("Bem vindo ao Bytebank")
 

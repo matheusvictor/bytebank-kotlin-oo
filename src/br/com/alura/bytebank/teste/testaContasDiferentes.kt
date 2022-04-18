@@ -1,3 +1,8 @@
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.ContaSalario
+import br.com.alura.bytebank.modelo.ContaTransferivel
+
 fun testaContasDiferentes() {
 
     val contaCorrente = ContaCorrente(titular = "Matheus", numero = 1000)
