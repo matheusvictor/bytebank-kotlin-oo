@@ -1,7 +1,4 @@
-import br.com.alura.bytebank.modelo.Cliente
-import br.com.alura.bytebank.modelo.Diretor
-import br.com.alura.bytebank.modelo.Gerente
-import br.com.alura.bytebank.modelo.SistemaInterno
+import br.com.alura.bytebank.modelo.*
 
 fun testaAutenticacao() {
     // Instância a partir de uma especialização de br.com.alura.bytebank.modelo.FuncionarioAdmin
