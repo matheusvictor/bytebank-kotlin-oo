@@ -8,4 +8,15 @@ class Endereco(
     var estato: String = "",
     var logradouro: String = "",
     var complemento: String = ""
-)
+){
+    override fun toString(): String =
+        """Endereco:
+            |cep='$cep',
+            |numero=$numero,
+            |bairro='$bairro',
+            |cidade='$cidade',
+            |estato='$estato',
+            |logradouro='$logradouro',
+            |complemento='$complemento'
+        """.trimMargin()
+}
