@@ -1,3 +1,3 @@
 package br.com.alura.bytebank.excecao
 
-class SaldoInsuficienteException: Exception("O saldo é insuficiente")
+class SaldoInsuficienteException(mensagem: String = "O saldo é insuficiente") : Exception(mensagem)

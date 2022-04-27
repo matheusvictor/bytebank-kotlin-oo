@@ -3,7 +3,7 @@ package br.com.alura.bytebank.modelo
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
-) {
+) : Autenticavel {
     var saldo = 0.0
         protected set
 
@@ -24,6 +24,10 @@ abstract class Conta(
 
     open fun saca(valor: Double) {
         if (this.saldo >= valor) this.saldo -= valor
+    }
+
+    override fun autentica(senha: Int): Boolean {
+        return titular.autentica(senha)
     }
 
 }

@@ -5,6 +5,6 @@ abstract class ContaTransferivel(
     numero: Int
 ) : Conta(titular, numero) {
 
-    abstract fun transfere(valor: Double, destino: Conta)
+    abstract fun transfere(valor: Double, destino: Conta, senha: Int)
 
 }
