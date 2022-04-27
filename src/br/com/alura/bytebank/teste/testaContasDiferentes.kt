@@ -46,6 +46,6 @@ fun testaContasDiferentes() {
     println("Saldo conta poupança após fazer transferência: R$ ${contaPoupanca.saldo}")
     // println("Saldo conta salário após fazer transferência: R$ ${contaSalario.saldo}")
 
-    println("Endereço de ${contaCorrente.titular.nome}: ${contaCorrente.titular.endereco.logradouro}")
+    println("Endereço de ${contaCorrente.titular.nome}: ${contaCorrente.titular.endereco}")
 
 }

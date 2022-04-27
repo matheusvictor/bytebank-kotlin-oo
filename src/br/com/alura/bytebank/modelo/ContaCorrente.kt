@@ -1,5 +1,7 @@
 package br.com.alura.bytebank.modelo
 
+import br.com.alura.bytebank.excecao.SaldoInsuficienteException
+
 class ContaCorrente(
     titular: Cliente,
     numero: Int
@@ -13,13 +15,13 @@ class ContaCorrente(
         if (this.saldo >= valorComTaxa) this.saldo -= valorComTaxa
     }
 
-    override fun transfere(valor: Double, destino: Conta): Boolean {
+    override fun transfere(valor: Double, destino: Conta) {
         if (saldo >= valor) {
             saldo -= valor
             destino.deposita(valor)
-            return true
+        } else {
+            throw SaldoInsuficienteException()
         }
-        return false
     }
 
 }
