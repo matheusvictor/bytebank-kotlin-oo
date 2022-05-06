@@ -1,20 +1,21 @@
 fun main() {
 
-    val minhaFuncaoLambda = {
-        println("O bloco de código do lambda é executado")
-    }
-    println(minhaFuncaoLambda())
+    testaTipoFuncaoReferencia()
 
-    val minhaFuncaoAnonima: () -> Unit = fun() { // função anônima
-        println("Executa como função anônima")
-    }
-    println(minhaFuncaoAnonima())
+//    val minhaFuncaoLambda = {
+//        println("O bloco de código do lambda é executado")
+//    }
+//    println(minhaFuncaoLambda())
+//
+//    val minhaFuncaoAnonima: () -> Unit = fun() { // função anônima
+//        println("Executa como função anônima")
+//    }
+//    println(minhaFuncaoAnonima())
 }
 
 fun testaTipoFuncaoClasse() {
-    val minhaFuncaoClasse = MinhaClasseComTipoFuncao() // como Classe já trabalham com referência, não usa-se o ::
-    println("Referência da classe do tipo função: $minhaFuncaoClasse")
-    println("Execuçaõ da função: ${minhaFuncaoClasse()}")
+    val minhaFuncaoClasse: (Int, Int) -> Int = Soma() // como Classe já trabalham com referência, não usa-se o ::
+    println("Execução da função (chamada do invoke): ${minhaFuncaoClasse(2, 2)}")
 }
 
 fun testaTipoFuncaoReferencia() {
@@ -26,19 +27,15 @@ fun testaTipoFuncaoReferencia() {
         :: indica a referência da função a ser usada. Isto é, isso não indica a execução função, mas sim a assinatura
     */
 
-    val minhaFuncao: () -> Unit = ::teste
+    val minhaFuncao: (Int, Int) -> Int = ::somar
     println(minhaFuncao) // imprime o tipo da variável minhaFuncao
-    println(minhaFuncao()) // "executa" a variável
+    println(minhaFuncao(5, 10)) // "executa" a variável
 }
 
-fun teste() {
-    println("Executa função de teste")
+fun somar(a: Int, b: Int): Int {
+    return a + b
 }
 
-class MinhaClasseComTipoFuncao : () -> Unit {
-
-    override fun invoke() {
-        println("Executa invoke da MinhaClasseComTipoFuncao")
-    }
-
+class Soma : (Int, Int) -> Int {
+    override fun invoke(a: Int, b: Int): Int = a + b
 }
