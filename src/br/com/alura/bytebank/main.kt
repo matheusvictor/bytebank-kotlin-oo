@@ -1,16 +1,22 @@
 fun main() {
 
-    testaTipoFuncaoReferencia()
+//    testaTipoFuncaoReferencia()
 
-//    val minhaFuncaoLambda = {
-//        println("O bloco de código do lambda é executado")
-//    }
-//    println(minhaFuncaoLambda())
-//
-//    val minhaFuncaoAnonima: () -> Unit = fun() { // função anônima
-//        println("Executa como função anônima")
-//    }
-//    println(minhaFuncaoAnonima())
+    val minhaFuncaoLambda: (Int, Int) -> Int =
+        { a, b -> a + b } // em funções lambdas a última expressão equivale ao retorno da função
+    println(minhaFuncaoLambda(20, 20))
+
+    /*
+        Obs. Em funções lambdas, o _ recebido como parâmetro significa que aquele parâmetro em específico
+        não será usado na função
+    */
+
+    val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int { // função anônima
+        println("Executa como função anônima")
+        return a + b
+    }
+    println(minhaFuncaoAnonima(1, 1))
+
 }
 
 fun testaTipoFuncaoClasse() {
