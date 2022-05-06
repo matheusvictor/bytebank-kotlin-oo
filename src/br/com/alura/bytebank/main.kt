@@ -1,5 +1,23 @@
 fun main() {
 
+    val minhaFuncaoLambda = {
+        println("O bloco de código do lambda é executado")
+    }
+    println(minhaFuncaoLambda())
+
+    val minhaFuncaoAnonima: () -> Unit = fun() { // função anônima
+        println("Executa como função anônima")
+    }
+    println(minhaFuncaoAnonima())
+}
+
+fun testaTipoFuncaoClasse() {
+    val minhaFuncaoClasse = MinhaClasseComTipoFuncao() // como Classe já trabalham com referência, não usa-se o ::
+    println("Referência da classe do tipo função: $minhaFuncaoClasse")
+    println("Execuçaõ da função: ${minhaFuncaoClasse()}")
+}
+
+fun testaTipoFuncaoReferencia() {
     /*
         Variável do tipo função:
         a inicialização de uma variável do tipo função precisa ser "assinada" a partir de uma
@@ -11,11 +29,6 @@ fun main() {
     val minhaFuncao: () -> Unit = ::teste
     println(minhaFuncao) // imprime o tipo da variável minhaFuncao
     println(minhaFuncao()) // "executa" a variável
-
-    val minhaFuncaoClasse = MinhaClasseComTipoFuncao() // como Classe já trabalham com referência, não usa-se o ::
-    println("Referência da classe do tipo função: $minhaFuncaoClasse")
-    println("Execuçaõ da função: ${minhaFuncaoClasse()}")
-
 }
 
 fun teste() {
