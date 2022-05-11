@@ -5,18 +5,26 @@ class Endereco(
     var numero: Int = 0,
     var bairro: String = "",
     var cidade: String = "",
-    var estato: String = "",
+    var estado: String = "",
     var logradouro: String = "",
     var complemento: String = ""
-){
+) {
     override fun toString(): String =
         """Endereco:
             |cep='$cep',
             |numero=$numero,
             |bairro='$bairro',
             |cidade='$cidade',
-            |estato='$estato',
+            |estato='$estado',
             |logradouro='$logradouro',
             |complemento='$complemento'
         """.trimMargin()
+
+    fun enderecoCompleto(): String {
+        return """
+            $logradouro, Nº $numero - $bairro. $cidade - $estado
+            $cep
+            $complemento
+        """.trimIndent()
+    }
 }
