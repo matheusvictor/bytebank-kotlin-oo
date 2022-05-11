@@ -10,4 +10,12 @@ class SistemaInterno {
             println("Falha ao tentar autenticar!")
     }
 
+    fun entraReceiver(admin: Autenticavel, senha: Int, autenticado: SistemaInterno.() -> Unit = {}) {
+        if (admin.autentica(senha)) {
+            println("Boas-vindas ao ByteBank!")
+            autenticado()
+        } else
+            println("Falha ao tentar autenticar!")
+    }
+
 }
