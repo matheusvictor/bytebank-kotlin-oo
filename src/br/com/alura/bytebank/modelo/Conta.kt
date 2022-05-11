@@ -14,7 +14,6 @@ abstract class Conta(
 
     // esse bloco de código será executado sempre que for feita uma instância de Conta
     init {
-        println("Criando uma conta...")
         totalContasCriadas++
     }
 
