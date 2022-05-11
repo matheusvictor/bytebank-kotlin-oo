@@ -6,10 +6,12 @@ fun main() {
 
     // uso de higher order functions
     Endereco(logradouro = "Rua dos Bobos", numero = 0)
-        .let { endereco ->
-            "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+        .run {
+            "$logradouro, $numero".toUpperCase()
         }
-        .let(::println) // invocação da função println por referência, recebendo o retorno do primeiro let como parâmetro
+        .let { enderecoEmMaiusculo: String ->
+            println(enderecoEmMaiusculo)
+        }
 
     listOf(
         Endereco(complemento = "Casa"),
